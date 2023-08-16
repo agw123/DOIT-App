@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
@@ -82,20 +80,6 @@ app.get("/:customListName", async (req, res) => {
       customLists = await List.find({});
       res.render("list", { listTitle: listName, newListItems: defaultItems, customLists: customLists, date: today });
     }
-
-    // if (!checkList) {
-    //   const list = new List({
-    //     name: listName,
-    //     items: defaultItems
-    //   });
-    //   await list.save();
-    //   customLists = await List.find({});
-    //   res.render("list", { listTitle: listName, newListItems: defaultItems, customLists: customLists, date: today });
-    // } else if (checkList) {
-    //   res.render("list", { listTitle: checkList.name, newListItems: checkList.items, customLists: customLists, date: today });
-    // } else if (listName === "About") {
-    //   res.render("about");
-    // }
   } catch (error) {
     console.log(error);
   }

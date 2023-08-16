@@ -1,5 +1,4 @@
 <%- include("header") -%>
-
   <div class="bg-wrapper">
     <div id="triangle-bottomleft"></div>
     <div id="triangle-bottomright"></div>
@@ -27,9 +26,7 @@
       <% }) %>
         <a href="/about">About</a>
   </div>
-
   <img class="logo" src="android-chrome-512x512.png" alt="logo">
-
   <h3 class="date">
     <%= date %>
   </h3>
@@ -41,7 +38,6 @@
     </div>
     </form>
   </div>
-
   <div class="box">
     <% newListItems.forEach(function(item) { %>
       <form action="/delete" method="post">
@@ -54,12 +50,11 @@
         <input type="hidden" name="listName" value="<%= listTitle %>"></input>
       </form>
       <% }) %>
-
         <form action="/" method="post">
           <div class="item">
             <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
             <button type="submit" name="list" value="<%= listTitle %>">+</button>
           </div>
         </form>
-  </div>
-  <%- include("footer") -%>
+  </div>  
+<%- include("footer") -%>
